@@ -3,7 +3,6 @@ import "../imports/api/ContactsCollection";
 import "../imports/api/ContactsMethods";
 import "../imports/api/ContactsPublications";
 import { Accounts } from "meteor/accounts-base";
-require("dotenv").config();
 
 Meteor.startup(() => {
   if (!Accounts.findUserByUsername(process.env.ADMIN_USERNAME)) {
