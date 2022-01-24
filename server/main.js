@@ -5,10 +5,10 @@ import "../imports/api/ContactsPublications";
 import { Accounts } from "meteor/accounts-base";
 
 Meteor.startup(() => {
-  if (!Accounts.findUserByUsername(process.env.ADMIN_USERNAME)) {
+  if (!Accounts.findUserByUsername("abdelhay")) {
     Accounts.createUser({
-      username: process.env.ADMIN_USERNAME,
-      password: process.env.ADMIN_PASSWORD,
+      username: "abdelhay",
+      password: "123456",
     });
   }
 });
