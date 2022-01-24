@@ -1,6 +1,8 @@
-import React from 'react';
+import React from "react";
 
-export const Header = () => {
+export const Header = ({ user }) => {
+  const logout = () => Meteor.logout();
+
   return (
     <header className="bg-indigo-600">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -8,15 +10,16 @@ export const Header = () => {
           <div className="flex items-center">
             <a href="#">
               <span className="sr-only">Meteor Wallet</span>
-              <img
-                className="h-10 w-auto"
-                src="/images/logo.png"
-                alt=""
-              />
+              <img className="h-10 w-auto" src="/images/logo.png" alt="" />
             </a>
           </div>
+          {user && (
+            <div className="user" onClick={logout}>
+              {user.username} <span className="logout">→</span>
+            </div>
+          )}
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
